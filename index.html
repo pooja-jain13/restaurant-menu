@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bright Leaf — Vegan Menu</title>
+  <meta name="description" content="Bright Leaf: a seasonal vegan menu with appetizers, main courses, and desserts.">
+  <style>
+    :root{--accent:#2f8f4f;--muted:#666;--bg:#f8faf8;--card:#ffffff;font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;}
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:#111}
+    header{background:linear-gradient(180deg, rgba(47,143,79,0.12), rgba(47,143,79,0.04));padding:1.25rem}
+    .container{max-width:1000px;margin:0 auto;padding:1rem}
+    .brand{display:flex;gap:1rem;align-items:center}
+    .brand h1{margin:0;font-size:1.5rem}
+    .hero{border-radius:12px;overflow:hidden;margin-top:1rem}
+    .hero img{width:100%;height:auto;display:block}
+    main{display:grid;grid-template-columns:1fr 320px;gap:1rem;margin-top:1rem}
+    @media (max-width:880px){main{grid-template-columns:1fr} .aside{order:2}}
+    .menu-section{background:var(--card);padding:1rem;border-radius:12px;box-shadow:0 4px 18px rgba(0,0,0,0.05)}
+    .section-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:0.75rem}
+    .menu-grid{display:grid;gap:0.75rem}
+    article.item{display:flex;justify-content:space-between;gap:1rem;padding:0.6rem;border-radius:8px}
+    article.item h3{margin:0;font-size:1rem}
+    article.item p{margin:0;color:var(--muted);font-size:0.92rem}
+    .price{white-space:nowrap;font-weight:600;color:var(--accent)}
+    .aside{position:sticky;top:1rem;height:max-content}
+    .note{font-size:0.9rem;color:var(--muted)}
+    footer{margin-top:1rem;text-align:center;color:var(--muted);font-size:0.85rem;padding:1rem}
+    .tag{background:rgba(47,143,79,0.08);color:var(--accent);padding:0.15rem 0.45rem;border-radius:999px;font-weight:600;font-size:0.78rem}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="brand" role="img" aria-label="Bright Leaf logo">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2s4 2 4 6-4 8-4 8-4-4-4-8 4-6 4-6z" fill="#2f8f4f"/></svg>
+        <div>
+          <h1>Bright Leaf</h1>
+          <div class="note">Seasonal, 100% plant-based • Sustainable & locally sourced</div>
+        </div>
+      </div>
+      <div class="hero" role="img" aria-label="Colorful vegan dishes on a wooden table">
+        <img src="https://picsum.photos/1200/400?grayscale=false&random=1" alt="Assorted vegan dishes on a table">
+      </div>
+    </div>
+  </header>
+
+  <main class="container" role="main">
+    <!-- Left column: menu -->
+    <section class="menu-section" aria-labelledby="menu-heading">
+      <h2 id="menu-heading" class="section-head">Menu <span class="tag">Vegan</span></h2>
+
+      <!-- Appetizers -->
+      <section aria-labelledby="apps">
+        <h3 id="apps">Appetizers</h3>
+        <div class="menu-grid" role="list">
+          <article class="item" role="listitem">
+            <div>
+              <h3>Chickpea & Herb Croquettes</h3>
+              <p>Pan-fried chickpea patties, lemon-tahini drizzle, micro-greens.</p>
+            </div>
+            <div class="price">$9</div>
+          </article>
+
+          <article class="item" role="listitem">
+            <div>
+              <h3>Roasted Beet Carpaccio</h3>
+              <p>Thin-sliced beets, pistachio crumble, orange vinaigrette.</p>
+            </div>
+            <div class="price">$10</div>
+          </article>
+
+          <article class="item" role="listitem">
+            <div>
+              <h3>Spring Roll Trio</h3>
+              <p>Rice paper rolls with tofu, mango, fresh herbs & a spicy peanut dip.</p>
+            </div>
+            <div class="price">$8</div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Main Courses -->
+      <section aria-labelledby="mains" style="margin-top:1rem">
+        <h3 id="mains">Main Course</h3>
+        <div class="menu-grid" role="list">
+          <article class="item" role="listitem">
+            <div>
+              <h3>Smoky Jackfruit Tacos</h3>
+              <p>House-smoked jackfruit, cabbage slaw, avocado crema, corn tortillas.</p>
+            </div>
+            <div class="price">$14</div>
+          </article>
+
+          <article class="item" role="listitem">
+            <div>
+              <h3>Cauliflower Steak & Romesco</h3>
+              <p>Charred cauliflower, romesco sauce, sauteed kale, toasted almonds.</p>
+            </div>
+            <div class="price">$17</div>
+          </article>
+
+          <article class="item" role="listitem">
+            <div>
+              <h3>Creamy Mushroom Risotto</h3>
+              <p>Arborio rice, mixed wild mushrooms, truffle oil, nutritional yeast.</p>
+            </div>
+            <div class="price">$16</div>
+          </article>
+
+          <article class="item" role="listitem">
+            <div>
+              <h3>Warm Farro Bowl</h3>
+              <p>Toasted farro, roasted squash, pickled onions, spiced pumpkin seeds.</p>
+            </div>
+            <div class="price">$13</div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Desserts -->
+      <section aria-labelledby="desserts" style="margin-top:1rem">
+        <h3 id="desserts">Dessert</h3>
+        <div class="menu-grid" role="list">
+          <article class="item" role="listitem">
+            <div>
+              <h3>Chocolate Avocado Mousse</h3>
+              <p>Silky dark-chocolate mousse, toasted coconut, berry coulis.</p>
+            </div>
+            <div class="price">$7</div>
+          </article>
+
+          <article class="item" role="listitem">
+            <div>
+              <h3>Lemon Cashew Tart</h3>
+              <p>Bright lemon filling in a nutty crust, raspberry dust.</p>
+            </div>
+            <div class="price">$8</div>
+          </article>
+
+          <article class="item" role="listitem">
+            <div>
+              <h3>Spiced Sticky Date Pudding</h3>
+              <p>Warm date sponge, caramel sauce, oat-cream.</p>
+            </div>
+            <div class="price">$8</div>
+          </article>
+        </div>
+      </section>
+
+    </section>
+
+    <!-- Right column: info / dietary / contact -->
+    <aside class="aside">
+      <div class="menu-section">
+        <h4>About</h4>
+        <p class="note">Bright Leaf celebrates plant-based cooking with seasonal produce, zero-compromise flavor, and sustainable sourcing.</p>
+        <hr>
+        <h4>Dietary</h4>
+        <p class="note">All items are 100% vegan. Ask your server about gluten-free modifications.</p>
+        <hr>
+        <h4>Hours & Contact</h4>
+        <p class="note">Open daily • 11:30am — 9:30pm<br>555 Greenway Ave • (555) 123-4567</p>
+      </div>
+    </aside>
+  </main>
+
+  <footer>
+    &copy; <span id="year"></span> Bright Leaf — Made with plants and care.
+  </footer>
+
+  <script>
+    // Small progressive enhancements
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
