@@ -9,52 +9,121 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 400;
     font-style: normal;
 }
-.appetizer-one{
-    width: 200px;
-    height:100px;
+
+/* Responsive, modern restaurant menu styles - mobile first */
+:root{
+    --bg: #fafafa;
+    --card-bg: #ffffff;
+    --muted: #6b7280;
+    --accent: #d946ef;
+    --accent-2: #06b6d4;
+    --shadow: 0 6px 18px rgba(15,23,42,0.08);
+    --radius: 12px;
+    --max-width: 1100px;
+    --gutter: 1rem;
 }
 
-.appetizer-two{
-    width: 100px;
-    height:100px;
+*{box-sizing: border-box}
+html,body{height:100%}
+body{
+    margin:0;
+    font-family: "Barlow", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    background:var(--bg);
+    color: #111827;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
 }
 
-.appetizer-three{
-    width: 100px;
-    height:100px;
+/* Container used to center the menu content */
+.container{
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 1.25rem;
 }
 
-.main-course-one{
-    width: 200px;
-    height:100px;
+/* Section title */
+.menu-section{
+    margin: 1.25rem 0 0.75rem;
+}
+.menu-section h2{
+    margin:0 0 0.5rem;
+    font-family: "DM Serif Text", serif;
+    font-size: 1.6rem;
+    letter-spacing: 0.2px;
+}
+.menu-section p{
+    margin:0 0 0.75rem;
+    color:var(--muted);
 }
 
-.main-course-two{
-    width: 200px;
-    height:100px;
+/* Grid for menu items - auto-fit creates responsive columns */
+.menu-grid{
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+    align-items:start;
 }
 
-.main-course-three{
-    width: 200px;
-    height:100px;
+/* Individual menu card */
+.menu-card{
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    display:flex;
+    flex-direction: column;
+    transition: transform 220ms ease, box-shadow 220ms ease;
+}
+.menu-card:hover{transform: translateY(-6px); box-shadow: 0 14px 40px rgba(15,23,42,0.12)}
+
+/* Image at top of card */
+.menu-card img{
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    display:block;
 }
 
-.main-course-four{
-    width: 200px;
-    height:100px;
+/* Allow legacy specific classes to behave responsively */
+.appetizer-one, .appetizer-two, .appetizer-three,
+.main-course-one, .main-course-two, .main-course-three, .main-course-four,
+.dessert-one, .dessert-two, .dessert-three{
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    display:block;
+    object-fit: cover;
 }
 
-.dessert-one{
-    width: 200px;
-    height:100px;
+.menu-card .card-body{
+    padding: 0.875rem 1rem 1rem;
+    display:flex;
+    flex-direction: column;
+    gap: 0.5rem;
 }
 
-.dessert-two{
-    width: 100px;
-    height:100px;
+.dish-row{display:flex; align-items:center; justify-content:space-between; gap:0.5rem}
+.dish-name{font-weight:600; font-size:1rem}
+.dish-price{color:var(--accent-2); font-weight:700}
+.dish-desc{color:var(--muted); font-size:0.95rem}
+
+/* Accent small tag */
+.tag{display:inline-block; background:linear-gradient(90deg,var(--accent),var(--accent-2)); color:white; padding:0.15rem 0.5rem; border-radius:999px; font-size:0.75rem}
+
+/* Responsive tweaks */
+@media (max-width: 600px){
+    .menu-card img{height:140px}
+    .container{padding:0.75rem}
+    .menu-section h2{font-size:1.4rem}
 }
 
-.dessert-three{
-    width: 200px;
-    height:100px;
+@media (min-width: 901px){
+    .menu-grid{gap:1.25rem}
+    .menu-card img{height:180px}
 }
+
+/* Utility helpers */
+.text-muted{color:var(--muted)}
+.center{display:flex; justify-content:center; align-items:center}
+
+/* End of responsive stylesheet */
